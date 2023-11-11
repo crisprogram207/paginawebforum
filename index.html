@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de registro - Mi web</title>
+    <!--Formulario Cristopher Vilca Paz-->
+</head>
+<body>
+    <div class="formulario">
+        <form>
+            <h1>Formulario Trabajo Final</h1>
+            <div class="nombre">
+                <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Ingrese su Nombre">
+            <br>
+            </div>
+            <div class="apellidos">
+                <label for="apellidos">Apellido:</label>
+                    <input type="text" id="apellidos" placeholder="Ingrese su Apellido">
+            <br>
+            </div>
+            <div class="sexo">
+                <label for="sexo">Sexo:</label>
+                <br><br>
+                    <input type="radio" id="hombre" name="h">Hombre
+                    <input type="radio" id="mujer" name="m">Mujer
+            <br>
+            </div>
+            <div class="correo">
+                <label for="correo">Correo Electronico:</label>
+                    <input type ="email" id="correo" placeholder="Ingrese su Correo Electronico">
+            </div>    
+            </form>
+        <form>
+            <div class="select">
+                <label for="poblacion">Poblacion</label>
+                    <select name="poblacion" id="poblacion">
+                        <option value="alicante">Alicante</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="sevilla">Sevilla</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+            </div>
+        </form><br><br>
+    
+    
+        <form>
+            <div class="comentario">
+                <label for="comentarios">Descripcion</label>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Ingrese un comentario"></textarea>
+            </div>       
+
+        </form>
+    
+   
+        <form>
+            <div class="verificar"><br>
+            <input type="checkbox" id="verificacion" name="verificacion" checked>&nbsp;<label for="verificacion">"Deseo recibir información sobrenovedades y ofertas"</label>
+            <br>
+            <br>
+            <input type="checkbox" id="verificacion2">&nbsp;<label for="verificacion2">"Declaro haber leido y aceptar lascondiciones generales del programa y la normativa sobre protección dedatos".</label>
+            </div>
+            <div class="boton">    
+            <br><br>
+            <form action="/procesar-formulario" method="get"></form>
+            <input type="submit" id="Enviar" value="Enviar">
+            <br>
+            </div>
+        </form> <br>
+    </div>
+    <script>
+        document.getElementById("Enviar").addEventListener("click" , function(){
+            const nombre = document.getElementById("nombre").value;
+            const apellidos = document.getElementById("apellidos").value;
+            const comentario = document.getElementById("comentarios").value;
+
+            const mensaje = `Gracias por registrarte:\n ${nombre}\n ${apellidos}\n ${comentario}`;
+            alert(mensaje)
+        })
+    </script>
+</body>
+</html>
